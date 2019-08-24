@@ -1,4 +1,7 @@
 const express = require('express');
+const db = require('./../database.js');
+
+console.log(db);
 
 const app = express();
 
@@ -9,6 +12,16 @@ const PORT = 3000;
 
 app.get('/', (req, res) => {
   res.end();
+});
+
+app.get('/photos/', (req, res) => {
+  // eslint-disable-next-line consistent-return
+  db.query('SELECT * FROM photos', (err, result) => {
+    if (err) {
+      res.send(err);
+    }
+    res.send(result);
+  });
 });
 
 app.listen(PORT, () => {
