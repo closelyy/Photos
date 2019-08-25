@@ -1,8 +1,6 @@
 const express = require('express');
 const db = require('./../database.js');
 
-console.log(db);
-
 const app = express();
 
 app.use(express.urlencoded(({ extended: true })));
