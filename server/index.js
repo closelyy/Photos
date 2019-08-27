@@ -13,7 +13,6 @@ app.get('/', (req, res) => {
 });
 
 app.get('/photos/', (req, res) => {
-  // eslint-disable-next-line consistent-return
   db.query('SELECT * FROM photos', (err, result) => {
     if (err) {
       res.send(err);
