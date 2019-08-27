@@ -23,7 +23,7 @@ describe('createBizPhotoRelationship', () => {
     expect(bizPhotoArray.length).toBe(100);
   });
 
-  test('each array should contain 10 to 30 photo urls', () => {
+  test('each array should contain between 10 to 30 photo urls', () => {
     let correctAmount = false;
     for (let i = 0; i < bizPhotoArray.length; i += 1) {
       const photos = bizPhotoArray[i];
@@ -52,5 +52,33 @@ describe('createUsers', () => {
     expect(user).toHaveProperty('friends');
     expect(user).toHaveProperty('reviews');
     expect(keys.length).toBe(6);
+  });
+});
+
+describe('createRandomCaption', () => {
+  const caption = data.createRandomCaption();
+  test('it should return a string', () => {
+    expect(typeof caption).toBe('string');
+  });
+});
+
+describe('createPhotos', () => {
+  const photos = data.createPhotos();
+  test('it should return an array with 100 photo objects', () => {
+    expect(photos.length).toBe(100);
+  });
+
+  test('a photo should containt the following keys: photo_id, user_id, medium, posted, caption, label, helpful, not_helpful', () => {
+    const photo = photos[0];
+    const keys = Object.keys(photo);
+    expect(photo).toHaveProperty('photo_id');
+    expect(photo).toHaveProperty('user_id');
+    expect(photo).toHaveProperty('medium');
+    expect(photo).toHaveProperty('posted');
+    expect(photo).toHaveProperty('caption');
+    expect(photo).toHaveProperty('label');
+    expect(photo).toHaveProperty('helpful');
+    expect(photo).toHaveProperty('not_helpful');
+    expect(keys.length).toBe(8);
   });
 });
