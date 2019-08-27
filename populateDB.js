@@ -1,5 +1,5 @@
 const mysql = require('mysql');
-const data = require('./dataGenerator.js');
+const data = require('./database/dataGenerator.js');
 
 const connection = mysql.createConnection({
   host: 'localhost',
@@ -18,10 +18,10 @@ connection.query('CREATE DATABASE closely', (err, result) => {
 
 connection.query('USE closely');
 
+connection.query('DROP TABLE IF EXISTS business_photos');
 connection.query('DROP TABLE IF EXISTS photos');
 connection.query('DROP TABLE IF EXISTS users');
 connection.query('DROP TABLE IF EXISTS businesses');
-connection.query('DROP TABLE IF EXISTS business_photos');
 
 connection.query(
   `CREATE TABLE photos (

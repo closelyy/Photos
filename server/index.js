@@ -1,10 +1,10 @@
 const express = require('express');
-const db = require('./../database.js');
+const db = require('./../database/database.js');
 
 const app = express();
 
 app.use(express.urlencoded(({ extended: true })));
-app.use(express.static('dist'));
+app.use(express.static('public'));
 
 const PORT = 3000;
 
