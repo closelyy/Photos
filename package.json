@@ -10,10 +10,15 @@
   },
   "scripts": {
     "start": "nodemon ./server/index.js localhost:3000",
-    "build": "webpack --config webpack.config.js --watch"
+    "build": "webpack --config webpack.config.js --watch",
+    "seed": "node populateDB.js"
   },
   "dependencies": {
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "express": "^4.17.1",
+    "faker": "^4.1.0",
+    "jquery": "^3.4.1",
+    "jquery-ajax": "^2.1.4",
     "mysql": "^2.17.1",
     "path": "^0.12.7",
     "react": "^16.9.0",
@@ -27,6 +32,7 @@
     "eslint": "^6.2.1",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "eslint-import-resolver-webpack": "^0.11.1",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
