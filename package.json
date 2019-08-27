@@ -12,7 +12,7 @@
     "start": "nodemon ./server/index.js localhost:3000",
     "build": "webpack --config webpack.config.js --watch",
     "seed": "node populateDB.js",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll --coverage"
   },
   "jest": {
     "setupFilesAfterEnv": [
@@ -25,6 +25,7 @@
     "verbose": true
   },
   "dependencies": {
+    "@types/jest": "^24.0.18",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "express": "^4.17.1",
     "faker": "^4.1.0",
