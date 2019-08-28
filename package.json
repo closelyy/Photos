@@ -12,7 +12,7 @@
     "start": "nodemon ./server/index.js localhost:3000",
     "build": "webpack --config webpack.config.js --watch",
     "seed": "node populateDB.js",
-    "test": "jest --watchAll --coverage"
+    "test": "jest --coverage"
   },
   "jest": {
     "setupFilesAfterEnv": [
