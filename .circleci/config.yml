@@ -6,7 +6,7 @@ jobs:
         - circleCI
     working_directory: ~/tmp
     docker:
-      - image: circleci/node10
+      - image: circleci/node:10.15.3
       - image: circleci/mysql:14.14
     steps:
       - checkout
