@@ -1,6 +1,9 @@
 version 2:
 jobs:
   build:
+    branches:
+      only:
+        - circleCI
     working_directory: ~/tmp
     docker:
       - image: circleci/node10
