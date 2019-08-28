@@ -24,13 +24,13 @@ describe('createBizPhotoRelationship', () => {
   });
 
   test('each array should contain between 10 to 30 photo urls', () => {
-    let correctAmount = false;
+    let correctAmount = true;
     for (let i = 0; i < bizPhotoArray.length; i += 1) {
       const photos = bizPhotoArray[i];
       if (photos.length < 10 || photos.length > 30) {
+        correctAmount = false;
         break;
       }
-      correctAmount = true;
     }
     expect(correctAmount).toBe(true);
   });
