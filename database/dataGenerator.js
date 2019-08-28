@@ -55,14 +55,14 @@ const createUsers = (quantity = 25) => {
 // Generates a random caption for photos
 const createRandomCaption = () => {
   const selection = getRandomInt(3);
-  // eslint-disable-next-line default-case
   switch (selection) {
+    default:
+      return '';
     case 1:
       return Faker.lorem.words(getRandomInt(10) + 5);
     case 2:
       return Faker.lorem.sentences(getRandomInt(3) + 1);
   }
-  return '';
 };
 
 // create 100 photos
