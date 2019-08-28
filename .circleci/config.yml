@@ -7,7 +7,7 @@ jobs:
     working_directory: ~/tmp
     docker:
       - image: circleci/node:10.15.3
-      - image: circleci/mysql:14.14
+      - image: circleci/mysql:5.7.27
     steps:
       - checkout
       - run: npm install
