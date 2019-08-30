@@ -26,12 +26,14 @@ class PhotoCarousel extends React.Component {
   }
 
   render() {
-    const { photos } = this.state;
+    const { photos } = this.props;
     return (
       <PhotosSection>
-        <Photo photo={photos[0]} />
-        <Photo photo={photos[1]} />
-        <Photo photo={photos[2]} />
+        {photos.slice(0, 3).map((photo) => {
+          return (
+            <Photo photo={photo.medium} />
+          );
+        })}
       </PhotosSection>
     );
   }
