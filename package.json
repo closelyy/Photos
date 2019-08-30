@@ -26,20 +26,22 @@
   },
   "dependencies": {
     "@types/jest": "^24.0.18",
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "jquery": "^3.4.1",
     "jquery-ajax": "^2.1.4",
     "mysql": "^2.17.1",
     "path": "^0.12.7",
+    "prop-types": "^15.7.2",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "styled-components": "^4.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.3",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "enzyme": "^3.10.0",
