@@ -1,18 +1,38 @@
 const express = require('express');
+const morgan = require('morgan');
+const path = require('path');
 const db = require('./../database/database.js');
 
 const app = express();
 
 app.use(express.urlencoded(({ extended: true })));
 app.use(express.static('public'));
+app.use(morgan('combined'));
 
 const PORT = 3000;
+const indexPath = path.join(`${__dirname}/../public/index.html`);
 
-app.get('/', (req, res) => {
-  res.end();
+app.get('/businesses/:id', (req, res) => {
+  res.sendFile(indexPath);
 });
 
-app.get('/photos/', (req, res) => {
+app.get('/api/businesses/:id/photos', (req, res) => {
+  const { id } = req.params;
+  db.query(`SELECT * FROM business_photos
+  JOIN photos
+  on business_photos.photo_id = photos.photo_id
+  JOIN users
+  on photos.user_id = users.user_id
+  WHERE business_id='${id}'
+  ORDER BY photos.photo_id`, (err, result) => {
+    if (err) {
+      res.send(err);
+    }
+    res.send(result);
+  });
+});
+
+app.get('/api/photos/', (req, res) => {
   db.query('SELECT * FROM photos', (err, result) => {
     if (err) {
       res.send(err);

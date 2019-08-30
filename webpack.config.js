@@ -13,11 +13,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx$/,
-        include: [
-          path.resolve(__dirname, 'client'),
+        test: /\.(js|jsx)$/,
+        exclude: [
+          /node_modules/,
+          /coverage/,
+          /database/,
         ],
-        exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
           presets: ['@babel/preset-react', '@babel/preset-env'],
