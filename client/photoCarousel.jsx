@@ -5,9 +5,16 @@ import PropTypes from 'prop-types';
 import Photo from './photo';
 
 const FullContainer = styled.div`
+  margin-left: 100px;
+  margin-top: 100px;
   display: flex;
   width: 750px;
   height: 250px;
+`;
+
+const Preload = styled.img`
+  visibility: hidden;
+  position: absolute;
 `;
 
 const LeftArrowContainer = styled.div`
@@ -119,10 +126,7 @@ class PhotoCarousel extends React.Component {
           <ArrowImage src="https://i.ibb.co/LRw50Pv/left-Arrow.png" />
         </LeftArrowContainer>
         <PhotosSection>
-          {photos.map((photo) => {
-            // eslint-disable-next-line jsx-a11y/alt-text
-            return <img style={{ visibility: 'hidden', position: 'absolute' }} src={photo.medium} />;
-          })}
+          {photos.map((photo) => <Preload src={photo.medium} />)}
 
           {photos.slice(currentFirst, currentFirst + 3).map((photo) => {
             const photoId = photo.photo_id;
