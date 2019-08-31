@@ -119,6 +119,11 @@ class PhotoCarousel extends React.Component {
           <ArrowImage src="https://i.ibb.co/LRw50Pv/left-Arrow.png" />
         </LeftArrowContainer>
         <PhotosSection>
+          {photos.map((photo) => {
+            // eslint-disable-next-line jsx-a11y/alt-text
+            return <img style={{ visibility: 'hidden', position: 'absolute' }} src={photo.medium} />;
+          })}
+
           {photos.slice(currentFirst, currentFirst + 3).map((photo) => {
             const photoId = photo.photo_id;
             const { caption } = photo;
