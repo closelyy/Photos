@@ -5,11 +5,6 @@ import PropTypes from 'prop-types';
 const PhotoContainer = styled.div`
   width: 250px;
   height: 250px;
-  transition: transform 1s;
-  :hover {
-    transform: scale(1.25);
-    z-index: 9999;
-  }
 `;
 
 const Image = styled.img`
