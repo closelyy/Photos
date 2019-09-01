@@ -4,15 +4,12 @@ import { shallow } from 'enzyme';
 import React from 'react';
 
 import {
-  FullContainer, LeftArrowContainer, RightArrowContainer, ArrowImage,
-  PhotosSection, ResizeOnHover, CaptionOpacity, Caption, Text,
+  LeftArrowContainer, RightArrowContainer, PhotosSection,
 } from '../client/styledComponents/styledPhotoCarousel';
 
 import PhotoCarousel from '../client/components/photoCarousel';
 import Photo from '../client/components/photo';
 import { PhotoContainer } from '../client/styledComponents/styledPhoto';
-
-console.log('PHOTOCAROUSEL:', PhotoCarousel);
 
 const photo1 = {
   photo_id: 1,
@@ -69,7 +66,6 @@ const photo4 = {
 const photos = [photo1, photo2, photo3, photo4];
 
 describe('Photo Carousel Component', () => {
-
   describe('Appearance', () => {
     const wrapper = shallow(<PhotoCarousel photos={photos} />);
     test('it should display 3 photos', () => {
