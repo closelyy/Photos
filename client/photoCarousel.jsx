@@ -35,7 +35,7 @@ const ArrowImage = styled.img`
   cursor: pointer;
 `;
 
-const PhotosSection = styled.section`
+export const PhotosSection = styled.section`
   display: flex;
   width: 750px;
   height: 250px;
