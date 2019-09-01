@@ -1,17 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
-
-const PhotoContainer = styled.div`
-  width: 250px;
-  height: 250px;
-`;
-
-const Image = styled.img`
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-`;
+import { PhotoContainer, Image } from '../styledComponents/styledPhoto';
 
 class Photo extends React.Component {
   constructor(props) {
