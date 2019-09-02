@@ -37,6 +37,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "request": "^2.88.0",
     "styled-components": "^4.3.2"
   },
   "devDependencies": {

@@ -69,10 +69,14 @@ const createRandomCaption = () => {
 const createPhotos = (quantity = 100) => {
   const photoArray = [];
   for (let i = 0; i < quantity; i += 1) {
+    let prefix = '';
+    if (i < 10) {
+      prefix = '0';
+    }
     const photo = {
       photo_id: i + 1,
       user_id: getRandomInt(24) + 1,
-      medium: Faker.image.imageUrl(null, null, 'food', true, false),
+      medium: `https://closelyyphotos.s3-us-west-1.amazonaws.com/main/closelyy${prefix}${i}.png`,
       posted: Faker.date.recent(600),
       caption: createRandomCaption(),
       label: Faker.random.word(),

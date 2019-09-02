@@ -18,6 +18,7 @@ module.exports = {
           /node_modules/,
           /coverage/,
           /database/,
+          /photoManager/,
         ],
         loader: 'babel-loader',
         options: {
