@@ -39,9 +39,13 @@ const createBizPhotoRelationship = () => {
 const createUsers = (quantity = 25) => {
   const usersArray = [];
   for (let i = 0; i < quantity; i += 1) {
+    let prefix = '';
+    if (i < 10) {
+      prefix = '0';
+    }
     const user = {
       user_id: i + 1,
-      profile_photo: Faker.image.imageUrl(null, null, 'avatar', true, false),
+      profile_photo: `https://closelyyphotos.s3-us-west-1.amazonaws.com/users/closelyyUser${prefix}${i}.png`,
       first_name: Faker.name.firstName(),
       last_name: Faker.name.lastName(),
       friends: getRandomInt(1000),
