@@ -48,12 +48,14 @@ class PhotoCarousel extends React.Component {
           {photos.slice(currentFirst, currentFirst + 3).map((photo) => {
             const photoId = photo.photo_id;
             const { caption } = photo;
+            const lastInitial = photo.last_name.slice(0, 1);
+            const username = `${photo.first_name} ${lastInitial}.`;
             return (
               <ResizeOnHover>
                 <Photo key={photoId} photo={photo.medium} />
                 <CaptionOpacity>
                   <Caption>
-                    <Text>{caption}</Text>
+                    <Text>{caption.length ? caption : `Photo by ${username}`}</Text>
                   </Caption>
                 </CaptionOpacity>
               </ResizeOnHover>
