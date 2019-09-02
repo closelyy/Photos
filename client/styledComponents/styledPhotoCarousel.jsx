@@ -4,6 +4,8 @@ const FullContainer = styled.div`
   display: flex;
   width: 750px;
   height: 250px;
+  margin-top: 100px;
+  margin-left: 100px;
 `;
 
 const LeftArrowContainer = styled.div`
@@ -45,6 +47,7 @@ const ResizeOnHover = styled.div`
   transition: transform 1s;
   :hover {
     transform: scale(1.25);
+    box-shadow: 0px 0px 25px 1px black;
     z-index: 9001;
   }
 `;
