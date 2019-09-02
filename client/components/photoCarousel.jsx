@@ -1,86 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
+import {
+  FullContainer, LeftArrowContainer, RightArrowContainer, ArrowImage,
+  PhotosSection, ResizeOnHover, CaptionOpacity, Caption, Text,
+} from '../styledComponents/styledPhotoCarousel';
+
 import Photo from './photo';
-
-const FullContainer = styled.div`
-  display: flex;
-  width: 750px;
-  height: 250px;
-`;
-
-const LeftArrowContainer = styled.div`
-  position: relative;
-  margin-right: -75px;
-  margin-top: 90px;
-  width: 50px;
-  height: 50px;
-  z-index: 10;
-`;
-
-const RightArrowContainer = styled.div`
-  position: relative;
-  margin-left: -75px;
-  margin-top: 90px;
-  width: 50px;
-  height: 50px;
-  z-index: 10;
-`;
-
-const ArrowImage = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  cursor: pointer;
-`;
-
-const PhotosSection = styled.section`
-  display: flex;
-  width: 750px;
-  height: 250px;
-  z-index: 1;
-`;
-
-const ResizeOnHover = styled.div`
-  width: 250px;
-  height: 250px;
-  z-index: 2;
-  transition: transform 1s;
-  :hover {
-    transform: scale(1.25);
-    z-index: 9001;
-  }
-`;
-
-const CaptionOpacity = styled.div`
-  position: relative;
-  width: 250px;
-  height: 250px;
-  transition: opacity 1s;
-  opacity: 0;
-  margin-top: -250px;
-  :hover {
-    opacity: 0.7;
-  }
-`;
-
-const Caption = styled.div`
-  position: absolute;
-  bottom: 0px;
-  width: 250px;
-  height: 50px;
-  z-index: 3;
-  color: white;
-  background-color: black;
-`;
-
-const Text = styled.div`
-  padding: 7px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-`;
 
 class PhotoCarousel extends React.Component {
   constructor(props) {
