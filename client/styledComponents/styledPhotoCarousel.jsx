@@ -65,6 +65,7 @@ const CaptionOpacity = styled.div`
 `;
 
 const Caption = styled.div`
+  display: flex;
   position: absolute;
   bottom: 0px;
   width: 250px;
@@ -72,6 +73,15 @@ const Caption = styled.div`
   z-index: 3;
   color: white;
   background-color: black;
+`;
+
+const ProfilePhoto = styled.img`
+  min-width: 40px;
+  max-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-top: 5px;
+  margin-left: 5px;
 `;
 
 const Text = styled.div`
@@ -83,5 +93,5 @@ const Text = styled.div`
 
 export {
   FullContainer, LeftArrowContainer, RightArrowContainer, ArrowImage,
-  PhotosSection, ResizeOnHover, CaptionOpacity, Caption, Text,
+  PhotosSection, ResizeOnHover, CaptionOpacity, Caption, ProfilePhoto, Text,
 };
