@@ -2,11 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import {
-  FullContainer, LeftArrowContainer, RightArrowContainer, ArrowImage,
-  PhotosSection, ResizeOnHover, CaptionOpacity, Caption, Text,
+  FullContainer, LeftArrowContainer, RightArrowContainer,
+  ArrowImage, PhotosSection,
 } from '../styledComponents/styledPhotoCarousel';
-
-import Photo from './photo';
+import ResizeDiv from './ResizeDiv';
 
 class PhotoCarousel extends React.Component {
   constructor(props) {
@@ -48,15 +47,17 @@ class PhotoCarousel extends React.Component {
           {photos.slice(currentFirst, currentFirst + 3).map((photo) => {
             const photoId = photo.photo_id;
             const { caption } = photo;
+            const lastInitial = photo.last_name.slice(0, 1);
+            const username = `${photo.first_name} ${lastInitial}.`;
+            const profilePhoto = photo.profile_photo;
             return (
-              <ResizeOnHover>
-                <Photo key={photoId} photo={photo.medium} />
-                <CaptionOpacity>
-                  <Caption>
-                    <Text>{caption}</Text>
-                  </Caption>
-                </CaptionOpacity>
-              </ResizeOnHover>
+              <ResizeDiv
+                key={photoId}
+                photo={photo.medium}
+                profilePhoto={profilePhoto}
+                caption={caption}
+                username={username}
+              />
             );
           })}
         </PhotosSection>

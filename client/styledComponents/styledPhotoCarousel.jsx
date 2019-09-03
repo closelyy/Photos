@@ -4,6 +4,8 @@ const FullContainer = styled.div`
   display: flex;
   width: 750px;
   height: 250px;
+  margin-top: 100px;
+  margin-left: 100px;
 `;
 
 const LeftArrowContainer = styled.div`
@@ -45,6 +47,7 @@ const ResizeOnHover = styled.div`
   transition: transform 1s;
   :hover {
     transform: scale(1.25);
+    box-shadow: 0px 0px 25px 1px black;
     z-index: 9001;
   }
 `;
@@ -62,6 +65,7 @@ const CaptionOpacity = styled.div`
 `;
 
 const Caption = styled.div`
+  display: flex;
   position: absolute;
   bottom: 0px;
   width: 250px;
@@ -69,6 +73,15 @@ const Caption = styled.div`
   z-index: 3;
   color: white;
   background-color: black;
+`;
+
+const ProfilePhoto = styled.img`
+  min-width: 40px;
+  max-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-top: 5px;
+  margin-left: 5px;
 `;
 
 const Text = styled.div`
@@ -80,5 +93,5 @@ const Text = styled.div`
 
 export {
   FullContainer, LeftArrowContainer, RightArrowContainer, ArrowImage,
-  PhotosSection, ResizeOnHover, CaptionOpacity, Caption, Text,
+  PhotosSection, ResizeOnHover, CaptionOpacity, Caption, ProfilePhoto, Text,
 };

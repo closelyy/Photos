@@ -7,8 +7,8 @@ import {
   LeftArrowContainer, RightArrowContainer, PhotosSection,
 } from '../client/styledComponents/styledPhotoCarousel';
 
-import PhotoCarousel from '../client/components/photoCarousel';
-import Photo from '../client/components/photo';
+import PhotoCarousel from '../client/components/PhotoCarousel';
+import Photo from '../client/components/Photo';
 import { PhotoContainer } from '../client/styledComponents/styledPhoto';
 
 const photo1 = {
@@ -22,6 +22,7 @@ const photo1 = {
   last_name: 'Hambersam',
   helpful: 1982,
   not_helpful: 713,
+  profile_Photo: 'https://kittenoverload.com/images/a907e923c23ff653673188e11c2f87c2/image.jpg',
 };
 
 const photo2 = {
@@ -35,6 +36,7 @@ const photo2 = {
   last_name: 'Hambersam',
   helpful: 1982,
   not_helpful: 713,
+  profile_Photo: 'https://kittenoverload.com/images/a907e923c23ff653673188e11c2f87c2/image.jpg',
 };
 
 const photo3 = {
@@ -48,6 +50,7 @@ const photo3 = {
   last_name: 'Hambersam',
   helpful: 1982,
   not_helpful: 713,
+  profile_Photo: 'https://kittenoverload.com/images/a907e923c23ff653673188e11c2f87c2/image.jpg',
 };
 
 const photo4 = {
@@ -61,13 +64,14 @@ const photo4 = {
   last_name: 'Hambersam',
   helpful: 1982,
   not_helpful: 713,
+  profile_Photo: 'https://kittenoverload.com/images/a907e923c23ff653673188e11c2f87c2/image.jpg',
 };
 
 const photos = [photo1, photo2, photo3, photo4];
 
 describe('Photo Carousel Component', () => {
   describe('Appearance', () => {
-    const wrapper = shallow(<PhotoCarousel photos={photos} />);
+    const wrapper = mount(<PhotoCarousel photos={photos} />);
     test('it should display 3 photos', () => {
       const photoComponent = wrapper.find('Photo');
       expect(photoComponent).toHaveLength(3);
