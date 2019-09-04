@@ -9,7 +9,7 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "start": "nodemon ./server/index.js localhost:3000",
+    "start": "nodemon ./server/index.js",
     "build": "webpack --config webpack.config.js --watch",
     "seed": "node populateDB.js",
     "test": "jest --coverage"
