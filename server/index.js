@@ -1,5 +1,4 @@
 const express = require('express');
-const morgan = require('morgan');
 const path = require('path');
 const db = require('./../database/database.js');
 
@@ -7,7 +6,11 @@ const app = express();
 
 app.use(express.urlencoded(({ extended: true })));
 app.use(express.static('public'));
-app.use(morgan('combined'));
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:1984');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
 
 const PORT = 3000;
 const indexPath = path.join(`${__dirname}/../public/index.html`);

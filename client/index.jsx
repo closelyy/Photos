@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-import PhotoCarousel from './components/photoCarousel';
+import PhotoCarousel from './components/PhotoCarousel';
 
 const obtainBusinessId = () => {
   const { pathname } = window.location;
