@@ -1,11 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-import PhotoCarousel from './components/photoCarousel';
+import PhotoCarousel from './components/PhotoCarousel';
 
 const obtainBusinessId = () => {
   const { pathname } = window.location;
+  console.log(window.location);
   return pathname.slice(12, pathname.length);
+};
+
+const obtainOrigin = () => {
+  const { origin } = window.location;
+  return origin;
 };
 
 class App extends React.Component {
@@ -18,7 +24,8 @@ class App extends React.Component {
 
   componentDidMount() {
     const businessId = obtainBusinessId();
-    axios.get(`http://localhost:3000/api/businesses/${businessId}/photos`)
+    const origin = obtainOrigin();
+    axios.get(`${origin}/api/businesses/${businessId}/photos`)
       .then((response) => {
         this.setState({ photos: response.data });
       })
