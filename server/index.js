@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const db = require('./../database/database.js');
 
 const app = express();
@@ -12,7 +13,7 @@ app.use((req, res, next) => {
 });
 
 const PORT = 3000;
-const indexPath = `${__dirname}/../public/index.html`;
+const indexPath = path.join(`${__dirname}/../public/index.html`);
 
 app.get('/businesses/:id', (req, res) => {
   res.sendFile(indexPath);
