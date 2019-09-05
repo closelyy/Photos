@@ -12,7 +12,7 @@ app.use((req, res, next) => {
   next();
 });
 
-const PORT = 3000;
+const PORT = 3003;
 const indexPath = path.join(`${__dirname}/../public/index.html`);
 
 app.get('/businesses/:id', (req, res) => {
