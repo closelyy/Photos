@@ -18,7 +18,7 @@ class App extends React.Component {
 
   componentDidMount() {
     const businessId = obtainBusinessId();
-    axios.get(`http://localhost:3003/api/businesses/${businessId}/photos`)
+    axios.get(`/api/businesses/${businessId}/photos`)
       .then((response) => {
         this.setState({ photos: response.data });
       })
