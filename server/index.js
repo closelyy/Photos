@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const express = require('express');
 const path = require('path');
 const db = require('./../database/database.js');
@@ -7,12 +8,12 @@ const app = express();
 app.use(express.urlencoded(({ extended: true })));
 app.use(express.static('public'));
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'http://localhost:1984');
+  res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
 
-const PORT = 3003;
+const PORT = process.env.PORT || 3003;
 const indexPath = path.join(`${__dirname}/../public/index.html`);
 
 app.get('/businesses/:id', (req, res) => {
@@ -29,7 +30,8 @@ app.get('/api/businesses/:id/photos', (req, res) => {
   WHERE business_id='${id}'
   ORDER BY photos.photo_id`, (err, result) => {
     if (err) {
-      res.send(err);
+      console.log(err);
+      res.status(404);
     }
     res.send(result);
   });
@@ -38,7 +40,8 @@ app.get('/api/businesses/:id/photos', (req, res) => {
 app.get('/api/photos/', (req, res) => {
   db.query('SELECT * FROM photos', (err, result) => {
     if (err) {
-      res.send(err);
+      console.log(err);
+      res.status(404);
     }
     res.send(result);
   });
