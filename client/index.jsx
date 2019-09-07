@@ -18,7 +18,7 @@ class App extends React.Component {
 
   componentDidMount() {
     const businessId = obtainBusinessId();
-    axios.get(`http://localhost:3000/api/businesses/${businessId}/photos`)
+    axios.get(`/api/businesses/${businessId}/photos`)
       .then((response) => {
         this.setState({ photos: response.data });
       })
@@ -38,4 +38,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('photos'));

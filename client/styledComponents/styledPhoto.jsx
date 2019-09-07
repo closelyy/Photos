@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 const PhotoContainer = styled.div`
   width: 250px;

@@ -6,10 +6,10 @@ import React from 'react';
 import {
   LeftArrowContainer, RightArrowContainer, PhotosSection,
 } from '../client/styledComponents/styledPhotoCarousel';
+import { PhotoContainer } from '../client/styledComponents/styledPhoto';
 
 import PhotoCarousel from '../client/components/PhotoCarousel';
 import Photo from '../client/components/Photo';
-import { PhotoContainer } from '../client/styledComponents/styledPhoto';
 
 const photo1 = {
   photo_id: 1,
