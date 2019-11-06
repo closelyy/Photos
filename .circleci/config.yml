@@ -10,6 +10,6 @@ jobs:
       - run: npm install
       - run:
           name: Install mysql in prep of seeding data
-          command: sudo apt-get install default-mysql-client
+          command: sudo apt-get update && sudo apt-get install default-mysql-client
       - run: npm run seed
       - run: npm test
