@@ -4,11 +4,7 @@ jobs:
     working_directory: ~/tmp
     docker:
       - image: circleci/node:10.15.3
-      - image: circleci/mysql:5.7.27
     steps:
       - checkout
       - run: npm install
-      - run:
-          name: Install mysql in prep of seeding data
-          command: sudo apt-get update && sudo apt-get install default-mysql-client
       - run: npm test
