@@ -54,7 +54,7 @@ const ResizeOnHover = styled.div`
 
 const CaptionOpacity = styled.div`
   position: relative;
-  width: 250px;
+  width: 100%;
   height: 250px;
   transition: opacity 1s;
   opacity: 0;
@@ -68,7 +68,7 @@ const Caption = styled.div`
   display: flex;
   position: absolute;
   bottom: 0px;
-  width: 250px;
+  width: 100%;
   height: 50px;
   z-index: 3;
   color: white;

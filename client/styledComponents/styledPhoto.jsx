@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 
 const PhotoContainer = styled.div`
-  width: 250px;
-  height: 250px;
+  width: 100%;
+  height: 100%;
 `;
 
 const Image = styled.img`
