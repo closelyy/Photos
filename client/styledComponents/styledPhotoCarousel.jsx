@@ -33,7 +33,7 @@ const ArrowImage = styled.img`
   cursor: pointer;
 `;
 
-const PhotosSection = styled.section`
+const PhotosTray = styled.section`
   display: flex;
   width: 750px;
   height: 250px;
@@ -93,5 +93,5 @@ const Text = styled.div`
 
 export {
   FullContainer, LeftArrowContainer, RightArrowContainer, ArrowImage,
-  PhotosSection, ResizeOnHover, CaptionOpacity, Caption, ProfilePhoto, Text,
+  PhotosTray, ResizeOnHover, CaptionOpacity, Caption, ProfilePhoto, Text,
 };

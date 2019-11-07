@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import React from 'react';
 
 import {
-  LeftArrowContainer, RightArrowContainer, PhotosSection,
+  LeftArrowContainer, RightArrowContainer, PhotosTray,
 } from '../client/styledComponents/styledPhotoCarousel';
 import { PhotoContainer } from '../client/styledComponents/styledPhoto';
 
@@ -78,7 +78,7 @@ describe('Photo Carousel Component', () => {
     });
 
     test('it should have a left navigation arrow', () => {
-      const full = wrapper.find(PhotosSection);
+      const full = wrapper.find(PhotosTray);
       expect(full).toHaveLength(1);
     });
 

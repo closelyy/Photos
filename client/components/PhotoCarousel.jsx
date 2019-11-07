@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import {
   FullContainer, LeftArrowContainer, RightArrowContainer,
-  ArrowImage, PhotosSection,
+  ArrowImage, PhotosTray,
 } from '../styledComponents/styledPhotoCarousel';
 import ResizeDiv from './ResizeDiv';
 
@@ -43,7 +43,7 @@ class PhotoCarousel extends React.Component {
         <LeftArrowContainer onClick={this.leftArrowClick}>
           <ArrowImage src="https://i.ibb.co/LRw50Pv/left-Arrow.png" />
         </LeftArrowContainer>
-        <PhotosSection>
+        <PhotosTray>
           {photos.slice(currentFirst, currentFirst + 3).map((photo) => {
             const photoId = photo.photo_id;
             const { caption } = photo;
@@ -60,7 +60,7 @@ class PhotoCarousel extends React.Component {
               />
             );
           })}
-        </PhotosSection>
+        </PhotosTray>
         <RightArrowContainer onClick={this.rightArrowClick}>
           <ArrowImage src="https://i.ibb.co/cbydqtS/right-Arrow.png" />
         </RightArrowContainer>
